@@ -94,6 +94,8 @@ soap-client
 
         $ mvn clean install
         Acesse http://localhost:9091/soap-client-api/
+        
+        Obs.: Necessário instalar a lib ojdbc6.jar (http://www.oracle.com/technetwork/apps-tech/jdbc-112010-090769.html).
 
 3. Configurando para o Eclipse, execute dentro do diretório do projeto
 
