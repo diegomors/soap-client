@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wls:weblogic-web-app xmlns:wls="http://xmlns.oracle.com/weblogic/weblogic-web-app" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://xmlns.oracle.com/weblogic/weblogic-web-app http://xmlns.oracle.com/weblogic/weblogic-web-app/1.7/weblogic-web-app.xsd">
+
+	<wls:context-root>soap-client-api</wls:context-root>
+
+	<wls:container-descriptor>
+		<wls:prefer-application-packages>
+			<wls:package-name>org.slf4j.*</wls:package-name>
+			<wls:package-name>org.apache.commons.*</wls:package-name>
+			<wls:package-name>com.sun.xml.ws.api.wsdl.parser.*</wls:package-name> 
+		</wls:prefer-application-packages>
+
+		<wls:prefer-application-resources>
+			<wls:resource-name>org/slf4j/impl/StaticLoggerBinder.class</wls:resource-name>
+			<wls:resource-name>META-INF/services/javax.xml.ws.*</wls:resource-name> 
+			<wls:resource-name>META-INF/services/com.sun.xml.ws.*</wls:resource-name> 
+			<wls:resource-name>META-INF/services/com.sun.tools.ws.*</wls:resource-name> 
+		</wls:prefer-application-resources>
+	</wls:container-descriptor>
+
+	<wls:session-descriptor>
+		<wls:cookie-path>/template-api</wls:cookie-path>
+		<wls:cookie-max-age-secs>3600</wls:cookie-max-age-secs>
+		<wls:sharing-enabled>true</wls:sharing-enabled>
+	</wls:session-descriptor>
+
+</wls:weblogic-web-app>

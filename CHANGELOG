@@ -1,0 +1,15 @@
+v2.2
+    - Acrescimo da implementação de produção e consumo SOAP no módulo API.
+
+v2.1
+    - Ajustes de impressao de modulo em arquivo único por modulo (API ou CORE).
+
+v2.0
+    - Conversão para o padrão RESTful.
+    - Retirada do Freemarker, Conversação.
+    - Fachada de log Slf4j com framewokr log4j.
+    - Exemplo de RestController respondendo nos padrões HTTP.
+
+v1.0
+    - Implementação do escopo de conversação.
+    - Scheduler e exemplo de SOAP.

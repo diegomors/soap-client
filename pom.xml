@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.diegomors</groupId>
+    <artifactId>soap-client</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>soap-client-api</module>
+        <module>soap-client-core</module>
+    </modules>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8	</project.build.sourceEncoding>
+        <!-- Essa propriedade serve para desligar a execucao dos testes de 
+            integracao nas builds normais. Veja o profile "com-testes-integracao" para 
+            mais detalhes -->
+        <surefire.exclude.testes.integracao>**/*IntegrationTest.java</surefire.exclude.testes.integracao>
+
+        <liquibase.db.driver>oracle.jdbc.OracleDriver</liquibase.db.driver>
+        <liquibase.default.schema.name>TEMPLATE_WEB</liquibase.default.schema.name>
+
+        <spring.version>4.2.2.RELEASE</spring.version>
+        <hibernate.version>4.2.19.Final</hibernate.version>
+        <hibernate.validator.version>5.2.0.Final</hibernate.validator.version>
+        <slf4j.version>1.7.21</slf4j.version>
+
+        <liquibase.version>3.4.0</liquibase.version>
+        <ojdbc6.version>11.2.0.4</ojdbc6.version>
+
+        <junit.version>4.12</junit.version>
+        <selenium.version>2.46.0</selenium.version>
+        <mockito.version>1.10.19</mockito.version>
+
+        <jetty.plugin.version>9.2.14.v20151106</jetty.plugin.version>
+    </properties>
+
+    <!-- PROFILES -->
+    <profiles>
+        <profile>
+            <id>desenvolvimento</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <build.profile.id>desenvolvimento</build.profile.id>
+            </properties>
+        </profile>
+        <profile>
+            <id>homologacao</id>
+            <properties>
+                <build.profile.id>homologacao</build.profile.id>
+            </properties>
+        </profile>
+        <profile>
+            <id>producao</id>
+            <properties>
+                <build.profile.id>producao</build.profile.id>
+            </properties>
+        </profile>
+        <!-- <profile> <id>local</id> <properties> <liquibase.db.conn.string>jdbc:oracle:thin:@localhost:1522:xe</liquibase.db.conn.string> 
+            <liquibase.db.user>ATUALIZADOR</liquibase.db.user> <liquibase.db.password>123456</liquibase.db.password> 
+            </properties> </profile> -->
+    </profiles>
+
+    <build>
+        <!-- <finalName>${project.artifactId}</finalName> -->
+        <filters>
+            <filter>profiles/${build.profile.id}/${build.profile.id}.properties</filter>
+        </filters>
+
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18.1</version>
+                <configuration>
+                    <excludes>
+                        <exclude>${surefire.exclude.testes.integracao}</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
