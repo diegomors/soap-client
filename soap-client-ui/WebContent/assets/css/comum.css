@@ -1,0 +1,543 @@
+
+html, body {
+	min-width: 320px;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+html > object {
+	display: none;
+}
+
+body {
+	background-color: rgb(0, 102, 204);
+}
+
+#barra-soap-client {
+	background-color: #ddd;
+	padding: 0 10% 0;
+}
+
+#barra-soap-client li {
+	float: left;
+	display: block;
+	margin: 0;
+	padding: 15px;
+	color: #888;
+	cursor: pointer;
+}
+
+#menu_principal {
+	margin-bottom: 0;
+	border-radius: 0;
+}
+
+#conteudo {
+	padding: 15px 0;
+	min-height: 500px;
+}
+
+#menu_principal, #conteudo {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+@media (max-width: 991px) {
+
+	#menu_principal, #conteudo {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+}
+
+#fundo_auxiliar{
+	clear:both;
+	width:100%;
+	height:auto;
+	float:inherit;
+	background: rgb(0, 102, 204); /* Old browsers */
+	margin-top: -5px; /* CorreÃ§Ã£o de margem do IFrame da Barra */
+}
+#barra-auxiliar {
+	height: 20px;
+	margin: 0 10% 0;
+	padding-top: 15px;
+}
+#barra-auxiliar .pular {
+	display: block;
+	float: left;
+}
+#barra-auxiliar .pular ul {
+	list-style: none;
+}
+#barra-auxiliar .pular ul li {
+	display: inline;
+	padding-right: 5px;
+	white-space: nowrap;
+}
+#barra-auxiliar a {
+	color: white;
+	font-size: 0.7em;
+	text-decoration: none;
+}
+#barra-auxiliar .acessibilidade {
+	display: block;
+	float: right;
+	text-align: right;
+}
+#barra-auxiliar .acessibilidade ul {
+	list-style: none;
+}
+#barra-auxiliar .acessibilidade ul li {
+	display: inline;
+	padding-left: 22px;
+	margin-left: 5px
+}
+#barra-auxiliar .ialtocontraste {
+	width: 15px;
+	height: 10px;
+}
+
+#fundo_cabecalho{
+    height: 95px;
+    background: #0066cc;
+    margin-top: 95px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+#cabecalho img{
+	border:0px;
+}
+#cabecalho ul {
+	list-style: none;
+}
+#cabecalho .logomarca {
+	padding: 25px 0 0 0;
+	margin: 0 auto;
+	float: left;
+	display: block;
+}
+#cabecalho .nome {
+	padding: 25px 0 0 0;
+	margin: 0 auto;
+	float: left;
+	display: block;
+}
+#cabecalho .acesso {
+	padding: 18px 0 0 0;
+	margin: 0 auto;
+	float: left;
+	display: block;
+	text-align: right;
+}
+#cabecalho .menu {
+	width: 100%;
+	margin: 0 auto;
+	float: left;
+	display: block;
+	text-align: left;
+	padding: 6px 0 0 0;
+}
+/* Nome da Secretaria */
+#cabecalho .titulo1 a{
+	font-weight: 700;
+	font-size: 2.313em;
+	text-decoration: none;
+	color: #FFF;
+}
+#cabecalho .titulo2{
+	font-weight: 500;
+	font-size:0.850em;
+	color: #FFF;
+}
+
+#fundo_rodape{
+	clear:both;
+	width:100%;
+	height: 60px;
+	background: #efefef;
+	padding: 15px 0;
+	border: thin solid #eee;
+}
+
+#rodape {
+	font-size:1.0em;
+	color: #888;
+	text-align: center;
+}
+
+#rodape .coluna1{
+	float:left;
+	width:22%;
+	text-align:left;
+}
+#rodape .coluna2{
+	float:left;
+	width:22%;
+	text-align:left;
+	margin:0 4% 0 4%
+}
+#rodape .coluna3{
+	float:left;
+	width:22%;
+	text-align:left;
+}
+
+#rodape .coluna4{
+	float:left;
+	width:22%;
+	text-align:left;
+	margin-left:3%;
+}
+
+#rodape .assinatura{
+	float:left;
+	width:100%;
+	text-align:left;
+	height:auto;
+	margin:20px 0 10px 0 ;
+	padding:25px 0 20px 0;
+}
+
+#rodape .assinatura ul{
+	display:inline;
+}
+
+#rodape .assinatura ul li{
+	float:left;
+	list-style:none;
+}
+
+#rodape .ai {
+	float:left;
+	background: rgb(0, 102, 204) url(static/ai.png) no-repeat;
+	display: block;
+	width:85px;
+	height:60px;
+	text-indent: -10000px
+}
+
+#rodape ul{
+	margin-top:0.5em;
+}
+
+#rodape ul li{
+	list-style-type:none;
+	margin:0.6em 0;
+}
+
+#rodape a{
+	font-family:'Open Sans', Tahoma, Geneva;
+	font-size:0.899em;
+	color:#FFF;
+	text-decoration:none;
+}
+
+#rodape a:hover{
+	text-decoration:underline;
+}
+
+#rodape h1{
+	font-family:'Open Sans', Tahoma, Geneva;
+	font-size:1.150em;
+	color:#FFF;
+	font-weight:700;
+}
+
+#rodape  a.titulo{
+	font-family:'Open Sans', Tahoma, Geneva;
+	font-size:1.150em;
+	color:#FFF;
+	font-weight:700;
+	margin-bottom:22px;
+	display:block;
+}
+
+#rodape img{
+	border:0;
+	vertical-align: middle;
+	padding:0 0 .25em .625em;
+}
+
+#rodape .end{
+	height:22px;
+	width: 100%;
+	clear:both;
+}
+
+.top-buffer{
+	margin-top: 15px;
+}
+
+.top-buffer-sm{
+	margin-top: 10px;
+}
+
+.top-buffer-xs{
+	margin-top: 3px;
+}
+
+.bottom-buffer{
+	margin-bottom: 15px;
+}
+
+.no-bottom-buffer{
+	margin-bottom: 0;
+}
+
+.bottom-buffer-lg{
+	margin-bottom: 30px;
+}
+
+.left-buffer{
+	margin-left: 10px;
+}
+
+.right-buffer{
+	margin-right: 10px;
+}
+
+#barra_processando{
+	position: fixed;
+	z-index: 1040;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	outline: 0;
+}
+
+#barra_processando div.backdrop{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	outline: 0;
+}
+
+#barra_processando div.conteudo{
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	margin-left: -112px;
+}
+
+.list-group-item-small-padding{
+	padding: 2px 15px;
+}
+
+.ajuda {
+	cursor: help;
+	color: #33d;
+}
+
+.fundo-vermelho {
+	background-color: #ffe8e8;
+}
+
+.fundo-verde {
+	background-color: #e8ffe8;
+}
+
+.modal-body {
+	max-height: 420px;
+	overflow-y: auto;
+}
+
+/**
+* XTRA PAGINAÃ‡ÃƒO
+*/
+
+table.paginada {
+	border-bottom: thin solid #ddd !important;
+}
+
+th.preco, td.preco{
+	text-align: right;
+}
+
+.paginacao > ul {
+	margin: 6px 0 0 0;
+}
+
+.paginacao {
+	color: #888;
+	font-size: smaller;
+}
+
+.paginacao p {
+	margin: 0;
+}
+
+#barra-auxiliar a {
+	cursor: pointer;
+}
+
+.paginacao a.desabilitado {
+	color: gray;
+	background-color: #eee;
+}
+
+/**
+* XTRA COLLAPSIBLE: plugin de comportamento para opÃ§Ã£o
+* expand/collapse de paineis.
+*/
+
+.xtra-collapsible-collapsed > .panel-body {
+	display: none;
+}
+
+.xtra-collapsible-seta {
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+/**
+* XTRA MULTI SELEÃ‡ÃƒO POR POPUP
+*/
+
+.xtra-multi-selecao-por-popup > a {
+	cursor: pointer;
+}
+
+/**
+* XTRA ITENS REMOVÃ�VEIS
+*/
+
+.xtra-itens-removiveis-item {
+	border: thin solid #eee;
+	color: #222;
+	display: block;
+	padding: 3px 5px;
+	margin: 3px 5px;
+	float: left;
+}
+
+.xtra-itens-removiveis-removedor {
+	color: #222;
+	cursor: pointer;
+}
+
+/**
+* XTRA MULTISELECT
+*/
+
+.xtra-multiselect {
+	display: none;
+}
+
+.xtra-multiselect-fullWidth{
+	width: 100%;
+}
+
+/**
+* XTRA ARMAZENAR SELEÃ‡ÃƒO
+*/
+.xtra-armazenar-selecao-total-de-selecoes {
+	color: #888;
+	font-size: smaller;
+	margin: 0;
+}
+
+.xtra-container-validacao-invalido {
+	color: #c00;
+}
+
+.xtra-container-validacao-invalido .xtra-container-validacao-mensagem {
+	display: block;
+	margin: 5px;
+}
+
+.xtra-container-validacao-invalido input,
+.xtra-container-validacao-invalido select {
+	border: thin solid red;
+}
+
+/**
+* XTRA FILE UPLOAD
+*/
+
+.xtra-file-upload-container .xtra-file-upload-btn-download,
+.xtra-file-upload-container .xtra-file-upload-btn-remover {
+	display: none;
+}
+
+.xtra-file-upload-preenchido .xtra-file-upload-btn-enviar {
+	display: none;
+}
+
+.xtra-file-upload-preenchido .xtra-file-upload-btn-download,
+.xtra-file-upload-preenchido .xtra-file-upload-btn-remover {
+	display: inline-block;
+}
+
+.group-title{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-size: 15px;
+	font-weight: bold;
+}
+.group-title p{
+	font-size: 19px;
+	color: #444;
+}
+.group-body{
+	font-weight: initial;
+}
+.group-body .value{
+	font-weight: 900;
+	font-size: 16px;
+}
+.card-box-title {
+	font-size: 15px;
+	color: #444;
+}
+
+.sem-margin-bottom{
+	margin-bottom: 0px !important;
+}
+
+.card-selected{
+	background: #DADADA !important;
+}
+
+.placa-auto {
+    border-radius: 4px;
+    width: 100px;
+    text-align: center;
+    background: #C1C1C1;
+    padding: 5px;
+    font-weight: bold;
+    color: #444;
+    -webkit-box-shadow: inset 0px 0px 9px 1px rgba(102,102,102,0.62);
+    -moz-box-shadow: inset 0px 0px 9px 1px rgba(102,102,102,0.62);
+    box-shadow: inset 0px 0px 9px 1px rgba(102,102,102,0.62);
+}
+
+.pay-header{
+	padding: 10px;
+	border: solid 1px #888;
+	border-radius: 3px;
+	width: 100%;
+}
+
+.pay-header:hover{
+	border-color: #0066cc;
+	color: #0066cc;
+}
+
+.pay-header.ativo{
+	border-color: #0066cc;
+	color: #0066cc;
+}
+
+.check-box-icons{
+    position: relative;
+    display: inline-block;
+    font-size: 17px;
+    color: #0066cc;
+}
+    

@@ -1,0 +1,33 @@
+<div ng-controller="usuarioController as listagem">
+    <!--<pre>{{listagem.listagem.grade | json}}</pre>-->
+    <md-button class="md-raised md-primary m-b-20" ng-click="listagem.redirecionarCadastrar()" >Cadastrar Usuário</md-button>
+    <!--Mudar mensagem de loading: async-loader-message="sua mensagem aqui"-->
+
+
+    <div ng-repeat="item in listagem.listagem.grade" class="listagem" >
+        <div class="card" >
+        <div  class="card-heading">
+            <div layout="row" layout-xs="column">
+            <div flex="10" flex-xs="100">
+                <div layout="row">
+                <md-button ng-click="listagem.remover(item)" class="md-icon-button" >
+                    <md-icon>delete</md-icon>
+                </md-button>
+                <md-button ng-click="listagem.editar(item)" class="md-icon-button" >
+                    <md-icon>mode_edit</md-icon>
+                </md-button>
+                </div>
+            </div>
+            <div flex="30" flex-xs="100">
+                <div layout="column">
+                <label class="label-titulo">Nome</label>
+                <label class="label-conteudo">{{item.nome}}</label>
+                <span ng-if="item.cpf!=undefined">  {{item.nome}} |  CPF: {{item.cpf | cpf}} </span>
+                <span ng-if="item.cnpj!=undefined"> {{item.nome}} |  CNPJ: {{item.cnpj | cnpj}} </span>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

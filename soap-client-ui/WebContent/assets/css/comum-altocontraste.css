@@ -1,0 +1,51 @@
+/*
+* Todas as regras deste arquivo se aplicam apenas quando
+* a funcionalidade "Alto Contraste" está ativada.
+*/
+body.alto-contraste #menu_principal {
+	background-color: #111;
+}
+
+body.alto-contraste, body.alto-contraste div.panel-default>div.panel-heading
+	{
+	color: white;
+}
+
+body.alto-contraste div.panel-default>div.panel-heading {
+	background-color: #151515;
+}
+
+body.alto-contraste .form-control {
+	color: white;
+	background-color: #111;
+	border-color: white;
+}
+
+body.alto-contraste div#conteudo, body.alto-contraste div#fundo_cabecalho,
+	body.alo-contraste, body.alto-contraste div#fundo_auxiliar, body.alto-contraste div#footer-brasil
+	{
+	background-color: black !important;
+}
+
+body.alto-contraste .panel {
+	border-color: #EEE;
+	background-color: #050505;
+}
+
+body.alto-contraste div#fundo_rodape {
+	border-top-color: #BBB;
+	background-color: #111;
+}
+
+body.alto-contraste div#fundo_rodape div#rodape {
+	color: white;
+}
+
+body.alto-contraste div#fundo_cabecalho {
+	border-bottom-color: black;
+}
+
+body.alto-contraste .paginacao a.desabilitado {
+	color: gray;
+	background-color: black;
+}

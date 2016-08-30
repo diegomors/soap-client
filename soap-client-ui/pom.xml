@@ -1,0 +1,13 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.github.diegomors</groupId>
+        <artifactId>soap-client</artifactId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>soap-client-ui</artifactId>
+    <packaging>pom</packaging>
+    <name>soap-client-ui</name>
+    <description>Projeto que contem os arquivos estaticos (HTML, CSS e JavaScript) com a view do projeto.</description>
+</project>

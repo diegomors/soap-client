@@ -1,0 +1,24 @@
+<div ng-controller="usuarioController as usuario">
+    <pre>{{usuario.model | json}}</pre>
+    <form class="css-form" name="formUsuario" role="form" novalidate>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card-box form-box">
+
+
+                <div class="form-group m-l-4">
+                  <md-input-container class="md-block">
+                    <label>Nome</label>
+                    <input required md-no-asterisk name="description" ng-model="usuario.model.nome" minlength="{{usuario.nomeMinTam}}">
+                    <div ng-messages="formUsuario.nome.$error" >
+                      <div ng-message="required">O nome é um campo obrigatório</div>
+                      <div ng-message="minlength">Nome não pode ser menor do que {{usuario.nomeMinTam}} caracteres</div>
+                    </div>
+                  </md-input-container>
+                </div>
+            </div>
+            <md-button class="md-raised md-primary" ng-click="formUsuario.$valid &&  usuario.cadastrar()" >Salvar</md-button>
+          </div>
+        </div>
+    </form>
+</div>

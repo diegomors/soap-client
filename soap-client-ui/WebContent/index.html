@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html  ng-app="soap-client-ui" >
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://localhost:8001/comum-ui/v1/css/core.css" >
+  <link rel="stylesheet" href="http://localhost:8001/comum-ui/v1/css/material-custom.css" >
+
+</head>
+<body layout="column">
+
+  <topo-bar> </topo-bar>
+
+  <div layout="column" flex >
+    <div layout="row" flex>
+          <md-sidenav layout-column class="md-sidenav-left " id="siteMenu" md-component-id="left" md-is-locked-open="lockLeft && $mdMedia('gt-md')">
+              <md-content layout-fill role="navigation">
+                  <menu-aplicacoes />
+              </md-content>
+          </md-sidenav>
+
+          <md-content layout="column" class="content-wrapper md-padding" flex layout-column id="content" ng-class="{true:'overlay', false:''}[telaNivelAplicacoes]">
+            <div flex>
+
+                <breadcrumb></breadcrumb>
+                <!-- Conteudo das aplicacoes -->
+                <div ng-view /></div>
+
+            </div>
+
+            <panel-aplicacoes />
+
+          </md-content>
+      </div>
+  </div>
+
+
+</body>
+
+
+
+<script type="text/javascript"> 
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); 
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E")); 
+</script> 
+
+<script type="text/javascript"> 
+	try { 
+	     var pageTracker = _gat._getTracker("UA-3385183-5"); 
+	     pageTracker._trackPageview(); 
+	} catch(err) {} 
+</script> 
+
+
+
+<!--ASSETS-->
+<script src="http://localhost:8001/comum-ui/v1/js/angular-1.5.4/angular.min.js"></script>
+<script src="http://localhost:8001/comum-ui/v1/js/angular-1.5.4/i18n/angular-locale_pt-br.js"></script>
+<script src="http://localhost:8001/comum-ui/v1/js/angular-1.5.4/angular-route.min.js"></script>
+<script src="http://localhost:8001/comum-ui/v1/js/angular-1.5.4/angular-touch.min.js"></script>
+<script src="http://localhost:8001/comum-ui/v1/js/angular-1.5.4/angular-animate.min.js"></script>
+<script src="http://localhost:8001/comum-ui/v1/js/angular-1.5.4/angular-aria.min.js"></script>
+<script src="http://localhost:8001/comum-ui/v1/js/angular-1.5.4/angular-messages.min.js"></script>
+<script src="http://localhost:8001/comum-ui/v1/js/plugins/ydn-db/ydn.db-is-core-qry.js"></script>
+<script src="http://localhost:8001/comum-ui/v1/js/plugins/momentjs-2.12.0/moment-with-locales.min.js"></script>
+<!-- Angular Material Library -->
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+
+<!--CONFIGS-->
+<script src="config/modules.js"></script>
+<script src="config/routes.js"></script>
+<script src="config/stores.js"></script>
+<script src="config/events.js"></script>
+
+
+<!--INIT-->
+<script src="init.js"></script>
+
+<!--FILTERS-->
+<script src="commons/filters/mascaras.js"></script>
+
+<!--SERVICES-->
+<script src="commons/services/util/textHelper.js"></script>
+<script src="commons/services/data/ydnService.js"></script>
+<script src="commons/services/data/dbUser.js"></script>
+
+<!--DIRECTIVES-->
+<script src="commons/directives/longPress.js"></script>
+<!--CONTROLLERS-->
+
+<script src="commons/conteudoController.js"></script>
+<script src="views/homeController.js"></script>
+<script src="views/usuario/usuarioController.js"></script>
+
+<script src="http://localhost:8001/comum-ui/v1/js/jquery.min.js"></script>
+<script src="http://localhost:8001/comum-ui/v1/js/bootstrap.min.js"></script>
+<script src="http://localhost:8001/comum-ui/v1/commons/directives/topoBar.js"></script>
+<script src="http://localhost:8001/comum-ui/v1/commons/directives/footer.js"></script>
+<script src="http://localhost:8001/comum-ui/v1/commons/directives/menuAplicacoes.js"></script>
+<script src="http://localhost:8001/comum-ui/v1/commons/directives/panelAplicacoes.js"></script>
+<script src="http://localhost:8001/comum-ui/v1/commons/directives/breadcrumb.js"></script>
+
+<script src="http://localhost:8001/comum-ui/v1/commons/directives/slideable.js"></script>
+<script src="http://localhost:8001/comum-ui/v1/commons/directives/asyncLoader.js"></script>
+
+<script src="http://localhost:8001/comum-ui/v1/config/events.js"></script>
+
+</body>
+</html>
