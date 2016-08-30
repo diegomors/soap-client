@@ -1,7 +1,7 @@
 # Cliente SOAP Genérico
 
 
-Esse projeto tem por objetivo realizar chamada à qualquer endpoint SOAP através de um web service REST seguindo a arquitetura RESTful.
+Esse projeto tem por objetivo realizar chamada à qualquer endpoint SOAP através de um web service REST seguindo a arquitetura RESTful. Além disso, possui preparação para implementação de camada de persistência com Oracle, versionamento de banco de dados com Liquibase e camada UI com AngularJS, HTML e CSS.
 
 
 ### Exemplo de Requisição ao Cliente SOAP Genérico:
@@ -69,6 +69,13 @@ soap-client
 |   ├── profiles
 |   ├── src
 |   └── pom.xml
+├── soap-client-db
+|   ├── db
+|   ├── db.changelog.xml
+|   └── pom.xml
+├── soap-client-ui
+|   ├── src
+|   └── pom.xml
 ├── README.md
 └── pom.xml
 ```
@@ -81,6 +88,10 @@ soap-client
     * Nesse módulo, ficará o serviço RESTful do projeto (caso necessário, pode ser SOAP também, Clients (WS)), controladores REST. Além disso pode comportar também implementações de Scheduler e Threads. Testes devem estar presentes também.
 * soap-client-core (JAR):
     * Esse é o módulo principal do projeto, nele consta os objetos de negócio do projeto! Por padrão, para cada model, deve ser criado seu respectivo Repositório (manipulação na base de dados) e Serviço (regras de negócio). Por exemplo para o modelo `Pessoa`, teremos o `PessoaRepositorio` e o `PessoaServico`, ou seja, os objetos de negócio e o regras de negócio ficarão nesse módulo. Este é dependência do módulo soap-client-api.
+* soap-client-db:
+    * Todas as migrações do banco de dados, separados por changeset...
+* soap-client-ui:
+    * Nesse módulo ficará a VIEW (AngularJS, HTML, CSS), também terá testes unitários de view, se aplicável. Este módulo por conter apenas arquivos estáticos, não gera empacotamento WAR, podem ser implantado em qualquer web server.
 
 
 ### Subindo a aplicação
@@ -94,8 +105,10 @@ soap-client
 
         $ mvn clean install
         Acesse http://localhost:9091/soap-client-api/
+        Acesse http://localhost:9091/soap-client-ui/#
         
-        Obs.: Necessário instalar a lib ojdbc6.jar (http://www.oracle.com/technetwork/apps-tech/jdbc-112010-090769.html).
+        Obs. 1: Necessário instalar a lib ojdbc6.jar (http://www.oracle.com/technetwork/apps-tech/jdbc-112010-090769.html).
+        Obs. 2: Necessário configurar o banco de dados no arquivo soap-client-core\src\main\core.properties.
 
 3. Configurando para o Eclipse, execute dentro do diretório do projeto
 
@@ -107,13 +120,17 @@ soap-client
 
     5.1 Configurar certificado digital no Weblogic:
     	
-    	Para realizar chamada à um endpoint SOAP que necessita de certificado digital, faz-se necessário configurá-lo no Weblogic.    	 
+    	Para realizar chamada à um endpoint SOAP que necessita de certificado digital, faz-se necessário configurá-lo no Weblogic.    	       
     
     5.2 API no Weblogic:
 
         $ cd soap-client-api
         $ mvn clean package wls:deploy
         Acesse http://localhost:{porta}/soap-client-api/
+        
+    5.3 UI é constituído por HTML, JS e CSS, basta colocar como um diretório no Weblogic, Apache ou um Servlet Conatainer, como o Jetty.
+
+        $ Acesse http://{servidor}:{porta}/template-ui/#
 
 
 6. Logs

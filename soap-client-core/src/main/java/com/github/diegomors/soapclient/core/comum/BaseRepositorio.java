@@ -11,7 +11,7 @@ import javax.persistence.Query;
 
 public class BaseRepositorio<T> {
 
-    @PersistenceContext(unitName = "nfeconsultaPU")
+    @PersistenceContext(unitName = "templatePU")
     private EntityManager entityManager;
 
     protected void aplicarParametros(Query query, Map<String, Object> parametros) {

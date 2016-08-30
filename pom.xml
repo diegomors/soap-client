@@ -9,6 +9,8 @@
     <modules>
         <module>soap-client-api</module>
         <module>soap-client-core</module>
+		<module>soap-client-db</module>
+		<module>soap-client-ui</module>
     </modules>
 
 

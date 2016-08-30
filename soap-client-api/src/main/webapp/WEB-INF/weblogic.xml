@@ -19,7 +19,7 @@
 	</wls:container-descriptor>
 
 	<wls:session-descriptor>
-		<wls:cookie-path>/template-api</wls:cookie-path>
+		<wls:cookie-path>/soap-client-api</wls:cookie-path>
 		<wls:cookie-max-age-secs>3600</wls:cookie-max-age-secs>
 		<wls:sharing-enabled>true</wls:sharing-enabled>
 	</wls:session-descriptor>
