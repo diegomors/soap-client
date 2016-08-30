@@ -6,11 +6,12 @@ Esse projeto tem por objetivo realizar chamada à qualquer endpoint SOAP atravé
 
 ### Exemplo de Requisição ao Cliente SOAP Genérico:
 
-        http://{servidor}:{porta}/soap-client-api/request/?endpoint=https%3A%2F%2Fwww1.nfe.fazenda.gov.br%2FNfeConsultaNFe%2FNfeConsultaNFe.asmx&action=nfeConsultaNFeLog&pfx-ns=nfec&uri-ns=http%3A%2F%2Fwww.portalfiscal.inf.br%2Fnfe%2Fwsdl%2FNfeConsultaNFe&xml=%3CSOAP-ENV%3AEnvelope%20xmlns%3ASOAP-ENV%3D%22http%3A%2F%2Fschemas.xmlsoap.org%2Fsoap%2Fenvelope%2F%22%20xmlns%3Anfec%3D%22http%3A%2F%2Fwww.portalfiscal.inf.br%2Fnfe%2Fwsdl%2FNfeConsultaNFe%22%3E%3CSOAP-ENV%3AHeader%3E%3Cnfec%3AnfeCabecMsg%20xmlns%3D%22http%3A%2F%2Fwww.portalfiscal.inf.br%2Fnfe%22%3E%3Cnfec%3AversaoDados%3E1.00%3C%2Fnfec%3AversaoDados%3E%3C%2Fnfec%3AnfeCabecMsg%3E%3C%2FSOAP-ENV%3AHeader%3E%3CSOAP-ENV%3ABody%3E%3Cnfec%3AnfeDadosMsg%3E%3CconsNFeLog%20xmlns%3D%22http%3A%2F%2Fwww.portalfiscal.inf.br%2Fnfe%22%20versao%3D%221.00%22%3E%3CtpAmb%3E1%3C%2FtpAmb%3E%3CchNFe%3E31160616701716000156550250033667061133159079%3C%2FchNFe%3E%3C%2FconsNFeLog%3E%3C%2Fnfec%3AnfeDadosMsg%3E%3C%2FSOAP-ENV%3ABody%3E%3C%2FSOAP-ENV%3AEnvelope%3E
+                http://{servidor}:{porta}/soap-client-api/request-xml/?endpoint=https%3A%2F%2Fwww1.nfe.fazenda.gov.br%2FNfeConsultaNFe%2FNfeConsultaNFe.asmx&action=nfeConsultaNFeLog&pfx-ns=nfec&uri-ns=http%3A%2F%2Fwww.portalfiscal.inf.br%2Fnfe%2Fwsdl%2FNfeConsultaNFe&xml=%3CSOAP-ENV%3AEnvelope%20xmlns%3ASOAP-ENV%3D%22http%3A%2F%2Fschemas.xmlsoap.org%2Fsoap%2Fenvelope%2F%22%20xmlns%3Anfec%3D%22http%3A%2F%2Fwww.portalfiscal.inf.br%2Fnfe%2Fwsdl%2FNfeConsultaNFe%22%3E%3CSOAP-ENV%3AHeader%3E%3Cnfec%3AnfeCabecMsg%20xmlns%3D%22http%3A%2F%2Fwww.portalfiscal.inf.br%2Fnfe%22%3E%3Cnfec%3AversaoDados%3E1.00%3C%2Fnfec%3AversaoDados%3E%3C%2Fnfec%3AnfeCabecMsg%3E%3C%2FSOAP-ENV%3AHeader%3E%3CSOAP-ENV%3ABody%3E%3Cnfec%3AnfeDadosMsg%3E%3CconsNFeLog%20xmlns%3D%22http%3A%2F%2Fwww.portalfiscal.inf.br%2Fnfe%22%20versao%3D%221.00%22%3E%3CtpAmb%3E1%3C%2FtpAmb%3E%3CchNFe%3E31160616701716000156550250033667061133159079%3C%2FchNFe%3E%3C%2FconsNFeLog%3E%3C%2Fnfec%3AnfeDadosMsg%3E%3C%2FSOAP-ENV%3ABody%3E%3C%2FSOAP-ENV%3AEnvelope%3E
         
         Parâmetros:
         	
-        	Obs.: Para setar o valor dos parâmetros na URL de chamada, deve-se utilizar método para encodar URI.
+        	Obs. 1: Caso queira o retorno em XML, deve-se utilizar a action "request-xml", mas caso queira o retorno em JSON, deve-se utilizar a action "request-json".        	
+        	Obs. 2: Para setar o valor dos parâmetros na URL de chamada, deve-se utilizar método para encodar URI.
         	
         	- endpoint: URL do endpoint SOAP a ser consumido.
         	- action: nome da action que será executada no endpoint SOAP.

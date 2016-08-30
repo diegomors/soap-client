@@ -21,8 +21,8 @@ public class SOAPClientController {
         return PropriedadesAPI.obterPropriedade("configuracao.help.URL");
     }
 
-    @RequestMapping(value = "/request", method = RequestMethod.GET, produces = "text/xml")
-    public String consultarPorXML(@RequestParam("endpoint") String URLEndpoint,
+    @RequestMapping(value = "/request-xml", method = RequestMethod.GET, produces = "application/xml")
+    public String getXML(@RequestParam("endpoint") String URLEndpoint,
             @RequestParam("action") String actionName, @RequestParam("pfx-ns") String prefixNamespace,
             @RequestParam("uri-ns") String URINamespace, @RequestParam("xml") String xml) {
         try {
@@ -31,7 +31,24 @@ public class SOAPClientController {
 
             SOAPMessage response = cliente.execute(actionName, xml);
 
-            return SOAPUtil.SOAPMessageToString(response);
+            return SOAPUtil.SOAPMessageToStringXML(response);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+    @RequestMapping(value = "/request-json", method = RequestMethod.GET, produces = "application/json")
+    public String getJSON(@RequestParam("endpoint") String URLEndpoint,
+            @RequestParam("action") String actionName, @RequestParam("pfx-ns") String prefixNamespace,
+            @RequestParam("uri-ns") String URINamespace, @RequestParam("xml") String xml) {
+        try {
+            SOAPOperation cliente = new SOAPOperationImpl();
+            cliente.init(URLEndpoint, prefixNamespace, URINamespace);
+
+            SOAPMessage response = cliente.execute(actionName, xml);
+
+            return SOAPUtil.SOAPMessageToStringJSON(response);
         } catch (Exception e) {
             e.printStackTrace();
             return null;

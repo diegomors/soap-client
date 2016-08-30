@@ -17,5 +17,9 @@
        	http://jax-ws.dev.java.net/spring/servlet.xsd">
 
     <context:component-scan base-package="com.github.diegomors.soapclient" />   
+    
+    <!-- JSON Support -->
+    <bean name="viewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+    <bean name="jsonTemplate" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
 
 </beans>
